@@ -1,0 +1,8 @@
+services:
+  query_engine:
+    build:
+      context: ./query_engine
+    volumes:
+      - ./synthetic_healthcare_data/synthea_output:/app/data
+    stdin_open: true
+    tty: true

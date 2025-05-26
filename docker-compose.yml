@@ -1,0 +1,6 @@
+services:
+  synthea:
+    build:
+      context: ./synthea_data_generator
+    volumes:
+      - ./synthetic_healthcare_data/synthea_output:/app/synthea/output

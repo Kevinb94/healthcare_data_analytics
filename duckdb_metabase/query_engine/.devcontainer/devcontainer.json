@@ -1,0 +1,23 @@
+{
+  "name": "query-engine-env",
+  "dockerComposeFile": "../../docker-compose.yml",
+  "service": "query_engine",
+  "workspaceFolder": "/app",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "ms-python.python",
+        "GitHub.github-vscode-theme"
+      ],
+      "settings": {
+        "workbench.colorTheme": "One Dark Pro",
+        "workbench.colorCustomizations": {
+          "activityBar.background": "#FFA500"  // bright orange
+        }
+      }
+    }
+  },
+  "remoteUser": "root",
+  "postCreateCommand": "apt-get update && apt-get install -y nano curl"
+}
