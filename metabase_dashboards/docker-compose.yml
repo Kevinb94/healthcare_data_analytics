@@ -1,10 +1,10 @@
 services:
-  query_engine:
+  duckdb_data_warehouse:
     build:
-      context: ./query_engine
+      context: ./duckdb_data_warehouse
     volumes:
       - ../synthetic_healthcare_data/synthea_output:/app/data
-      - ./query_engine/queries:/app/queries  # Mount queries folder
+      - ./duckdb_data_warehouse/queries:/app/queries  # Mount queries folder
       - ./duckdb_database:/app/database
     stdin_open: true
     tty: true
