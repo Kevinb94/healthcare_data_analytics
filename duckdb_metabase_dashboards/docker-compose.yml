@@ -1,0 +1,21 @@
+services:
+  query_engine:
+    build:
+      context: ./query_engine
+    volumes:
+      - ../synthetic_healthcare_data/synthea_output:/app/data
+      - ./query_engine/queries:/app/queries  # Mount queries folder
+      - ./duckdb_database:/app/database
+    stdin_open: true
+    tty: true
+  metabase:
+    build:
+      context: ./metabase  # Now uses the custom Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      MB_PLUGINS_DIR: /home/plugins/
+      MB_DB_FILE: /metabase.db/metabase.db  # Tell Metabase where to save the H2 file
+    volumes:
+      - ./duckdb_database:/app/database
+      - ./metabase_data:/metabase.db  # ✅ Persist Metabase metadata here

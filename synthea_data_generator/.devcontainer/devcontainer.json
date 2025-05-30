@@ -16,7 +16,12 @@
         "GitHub.github-vscode-theme"
       ],
       "settings": {
-        "workbench.colorTheme": "GitHub Dark"
+        "workbench.colorTheme": "GitHub Dark",
+        "workbench.colorCustomizations": {
+          "activityBar.background": "#228B22",         // Bright green
+          "activityBar.foreground": "#FFFFFF",         // Icon/text color (white)
+          "activityBar.inactiveForeground": "#B0FFB0"   // Optional: softer green for inactive icons
+        }
       }
     }
   },

@@ -1,2 +1,4 @@
 /synthetic_healthcare_data/*
 /synthea_data_generator/data/*
+metabase.db.mv.db
+metabase.db.trace.db
