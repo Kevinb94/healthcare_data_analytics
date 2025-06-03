@@ -1,0 +1,7 @@
+tuva_dbt:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: /app/tuva_dbt/tuva.duckdb
+      schema: main

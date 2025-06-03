@@ -1,0 +1,1 @@
+duckdb /app/duckdb_database/synthea.duckdb < /app/queries/views/test.sql

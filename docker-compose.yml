@@ -1,0 +1,39 @@
+services:
+  synthea:
+    build:
+      context: ./synthea_data_generator
+    volumes:
+      - ./synthetic_healthcare_data/synthea_output:/app/synthea/output
+  duckdb_data_warehouse:
+    build:
+      context: ./duckdb_data_warehouse
+    volumes:
+      - ./synthetic_healthcare_data/synthea_output:/app/data
+      # - ./duckdb_data_warehouse/queries:/app/queries  # Mount queries folder
+      # - ./duckdb_data_warehouse/duckdb_database:/app/database
+      - ./duckdb_data_warehouse/:/app
+    stdin_open: true
+    tty: true
+  metabase:
+    build:
+      context: ./metabase_dashboards/metabase  # Now uses the custom Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      MB_PLUGINS_DIR: /home/plugins/
+      MB_DB_FILE: /metabase.db/metabase.db  # Tell Metabase where to save the H2 file
+    volumes:
+      - ./duckdb_data_warehouse/duckdb_database:/app/database
+      - ./metabase_dashboards/metabase_data:/metabase.db  # ✅ Persist Metabase metadata here
+  sqlmesh:
+    build:
+      context: ./sqlmesh_data_models
+    volumes:
+      - ./duckdb_data_warehouse/duckdb_database:/app/database  # Gives SQLMesh access to synthea.duckdb
+      - ./sqlmesh_data_models:/app/sqlmesh  # (optional) if you want models editable inside the container
+    working_dir: /app/sqlmesh
+    stdin_open: true
+    tty: true
+    depends_on:
+      - duckdb_data_warehouse
+

@@ -1,0 +1,22 @@
+{
+  "name": "metabase-dev",
+  "dockerComposeFile": "../../../docker-compose.yml",
+  "service": "metabase",
+  "workspaceFolder": "/app",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "humao.rest-client",              // REST Client
+        "rangav.vscode-thunder-client"    // Thunder Client
+      ],
+      "settings": {
+        "workbench.colorTheme": "One Dark Pro",
+        "workbench.colorCustomizations": {
+          "activityBar.background": "#3498db"
+        }
+      }
+    }
+  },
+  "remoteUser": "root"
+}

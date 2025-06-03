@@ -1,0 +1,11 @@
+/synthetic_healthcare_data/*
+/synthea_data_generator/data/*
+metabase.db.mv.db
+metabase.db.trace.db
+/duckdb_data_warehouse/duckdb_database/synthea.duckdb
+/duckdb_data_warehouse/metadata.ducklake.files/*
+/metadata.ducklake.files/*
+metadata.ducklake
+synthea_ducklake.ducklake
+synthea_ducklake.ducklake.wal
+duckdb_data_warehouse/duckdb_database/synthea.duckdb

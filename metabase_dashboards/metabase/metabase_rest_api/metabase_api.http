@@ -1,0 +1,40 @@
+### 1. Authenticate to Metabase and get a session token
+POST http://metabase:3000/api/session
+Content-Type: application/json
+
+{
+  "username": "email",
+  "password": "password"
+}
+
+### 2. Get all questions (basic metadata for all cards)
+GET http://metabase:3000/api/card
+X-Metabase-Session: 8559df7f-6bca-4cbe-9db5-5d73a03f10e6
+
+### 2. Get all collections
+GET http://metabase:3000/api/collection
+X-Metabase-Session: 8559df7f-6bca-4cbe-9db5-5d73a03f10e6
+
+### 3. Get full definition of a single question (replace :id with real card ID)
+GET http://metabase:3000/api/card/70
+X-Metabase-Session: 8559df7f-6bca-4cbe-9db5-5d73a03f10e6
+
+### 4. Re-create a question (example payload; replace values as needed)
+POST http://localhost:3000/api/card
+Content-Type: application/json
+X-Metabase-Session: YOUR_SESSION_TOKEN
+
+{
+  "name": "My Sample Question",
+  "description": "Created via REST API",
+  "collection_id": null,
+  "dataset_query": {
+    "database": 1,
+    "type": "native",
+    "native": {
+      "query": "SELECT * FROM my_table LIMIT 10"
+    }
+  },
+  "display": "table",
+  "visualization_settings": {}
+}
