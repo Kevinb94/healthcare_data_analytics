@@ -36,4 +36,3 @@ services:
     tty: true
     depends_on:
       - duckdb_data_warehouse
-

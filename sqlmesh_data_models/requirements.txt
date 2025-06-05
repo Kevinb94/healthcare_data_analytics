@@ -1,3 +1,2 @@
-sqlmesh
-duckdb
+sqlmesh[duckdb]
 pandas

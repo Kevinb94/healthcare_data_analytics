@@ -9,3 +9,7 @@ metadata.ducklake
 synthea_ducklake.ducklake
 synthea_ducklake.ducklake.wal
 duckdb_data_warehouse/duckdb_database/synthea.duckdb
+sqlmesh_data_models/.cache/
+sqlmesh_data_models/logs/
+sqlmesh_data_models/macros/__pycache__/
+.gitkeep
