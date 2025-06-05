@@ -25,6 +25,14 @@ services:
     volumes:
       - ./duckdb_data_warehouse/duckdb_database:/app/database
       - ./metabase_dashboards/metabase_data:/metabase.db  # ✅ Persist Metabase metadata here
+  metabase_bootstrap:
+    build:
+      context: ./metabase_dashboards/bootstrap
+    depends_on:
+      - metabase
+    environment:
+      - METABASE_HOST=http://metabase:3000
+    command: ["python", "init.py"]
   sqlmesh:
     build:
       context: ./sqlmesh_data_models
