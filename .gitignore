@@ -13,3 +13,4 @@ sqlmesh_data_models/.cache/
 sqlmesh_data_models/logs/
 sqlmesh_data_models/macros/__pycache__/
 .gitkeep
+todo.md
