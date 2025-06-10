@@ -1,0 +1,1 @@
+SELECT gender, COUNT(*) AS patient_count FROM patients GROUP BY gender;
