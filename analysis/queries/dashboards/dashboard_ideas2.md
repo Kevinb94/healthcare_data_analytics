@@ -1,6 +1,5 @@
 # 📊 Metabase Dashboard & Chart Ideas for Synthea + DuckDB
 
-You're using DuckDB to prep the data with SQL so that Metabase can focus on visualizing — great approach! Below are ideas for dashboards and visualizations grouped by use case.
 
 ---
 
@@ -88,5 +87,3 @@ You're using DuckDB to prep the data with SQL so that Metabase can focus on visu
 - **Interactive Dashboards**: Click-to-filter, time sliders, etc.
 
 ---
-
-Let me know what specific tables you're using and I can help create SQL queries to prep the data for these visualizations.
