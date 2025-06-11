@@ -1,3 +1,4 @@
+CREATE TABLE patient_age_groups AS
 SELECT
     CASE
         WHEN age_years < 18 THEN '0-17'
@@ -9,7 +10,7 @@ SELECT
     COUNT(*) AS patient_count
 FROM (
     SELECT
-        FLOOR((JULIANDAY('now') - JULIANDAY(birthdate)) / 365.25) AS age_years
+        FLOOR(DATE_DIFF('day', birthdate, CURRENT_DATE) / 365.25) AS age_years
     FROM patients
 ) AS aged_patients
 GROUP BY age_group

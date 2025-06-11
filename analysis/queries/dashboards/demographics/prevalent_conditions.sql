@@ -1,3 +1,4 @@
+CREATE TABLE IF NOT EXISTS prevalent_conditions_summary AS
 SELECT
     c.DESCRIPTION,
     COUNT(DISTINCT c.PATIENT) AS unique_patient_count,
