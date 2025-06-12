@@ -2,6 +2,8 @@
 
 Welcome to my **Data Engineering Lab** — a collection of hands-on, containerized projects designed to explore and practice key concepts in modern data engineering.
 
+> ⚠️ **Note:** This repository is a work in progress. I'm actively building and refining these projects — updates will continue regularly.
+
 Each subproject in this repository is self-contained and focuses on a specific skill area, tool, or real-world workflow. All environments are powered by **Docker Compose** and built for reproducibility.
 
 ---
@@ -13,5 +15,3 @@ Each subproject in this repository is self-contained and focuses on a specific s
 - ✅ Explore data generation, ingestion, transformation, storage, and visualization  
 - ✅ Develop pipelines and analytics on synthetic, public, or test data  
 - ✅ Experiment with SQL engines, data formats, dashboards, and forecasting  
-
----

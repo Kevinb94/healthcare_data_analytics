@@ -27,20 +27,20 @@ services:
       - ./metabase_dashboards/metabase_data:/metabase.db  # ✅ Persist Metabase metadata here
   metabase_bootstrap:
     build:
-      context: ./metabase_dashboards/bootstrap
+      context: ./metabase_dashboards/metabase_bootstrap
     depends_on:
       - metabase
     environment:
       - METABASE_HOST=http://metabase:3000
     command: ["python", "init.py"]
-  sqlmesh:
-    build:
-      context: ./sqlmesh_data_models
-    volumes:
-      - ./duckdb_data_warehouse/duckdb_database:/app/database  # Gives SQLMesh access to synthea.duckdb
-      - ./sqlmesh_data_models:/app/sqlmesh  # (optional) if you want models editable inside the container
-    working_dir: /app/sqlmesh
-    stdin_open: true
-    tty: true
-    depends_on:
-      - duckdb_data_warehouse
+  # sqlmesh:
+  #   build:
+  #     context: ./sqlmesh_data_models
+  #   volumes:
+  #     - ./duckdb_data_warehouse/duckdb_database:/app/database  # Gives SQLMesh access to synthea.duckdb
+  #     - ./sqlmesh_data_models:/app/sqlmesh  # (optional) if you want models editable inside the container
+  #   working_dir: /app/sqlmesh
+  #   stdin_open: true
+  #   tty: true
+  #   depends_on:
+  #     - duckdb_data_warehouse
